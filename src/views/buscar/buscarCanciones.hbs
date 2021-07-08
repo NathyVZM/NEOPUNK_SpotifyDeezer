@@ -1,0 +1,11 @@
+<div>
+    {{#each canciones}}
+    <div>
+        <h3 id="{{_id}}"> {{ titlesong }}</h3>
+        <p> {{ musicArtist.title }} </p>
+        <p> {{ musicArtist.artist.name }} </p>
+        <button type="button" name="{{_id}}">Favoritas</button>
+    </div>
+    {{/each}}
+    <div id="buscarCanciones"></div>
+</div>

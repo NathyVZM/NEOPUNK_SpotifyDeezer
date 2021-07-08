@@ -1,0 +1,11 @@
+<div>
+    {{#each favoritas}}
+    <div>
+        {{#each cancionesFavoritas}}
+        <h3> {{ titlesong }}</h3>
+        <p> {{ musicArtist.title }}</p>
+        <p> {{ musicArtist.artist.name }} </p>
+        {{/each}}
+    </div>
+    {{/each}}
+</div>

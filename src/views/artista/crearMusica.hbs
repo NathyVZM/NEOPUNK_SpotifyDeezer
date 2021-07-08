@@ -1,0 +1,25 @@
+<div>
+    <h1>Crear Musica</h1>
+    <form action="/artista/musica" method="POST" id="form-artista">
+        <input type="text" name="title" placeholder="Titulo">
+        <input type="date" name="date" placeholder="Fecha de Lanzamiento">
+
+        <select name="typeAlbum">
+            <option value="album">Album</option>
+            <option value="ep">EP</option>
+            <option value="single">Sencillo</option>
+        </select>
+
+        <select name="artist" aria-placeholder="Artista">
+            {{#each artistas}}
+            <option value="{{ _id }}">{{ name }}</option>
+            {{/each}}
+        </select>
+
+        <div id="espacioCanciones"></div>
+        <button type="button" id="crearCancion">Crear Cancion</button>
+        
+
+        <button type="submit" id="guardar">Guardar</button>
+    </form>
+</div>
