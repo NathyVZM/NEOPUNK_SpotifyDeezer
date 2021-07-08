@@ -2,7 +2,9 @@
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://NathyVZM:NathalieZambrano@cluster0.tp5nb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+//process.env.MONGODB_URI
+
+mongoose.connect(process.env.MONGODB_URI, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useFindAndModify: false
