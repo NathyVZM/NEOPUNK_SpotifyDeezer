@@ -40,13 +40,6 @@ router.post('/artista/musica', isAuthenticated, async (req, res) => {
 
     const musicArtist = nuevaMusica._id;
 
-    /*for(let i = 0; i < titlesong.length; i++){
-        let titulo = titlesong[i];
-        
-        const nuevaCancion = new Song({ titlesong: titulo, musicArtist });
-        await nuevaCancion.save();
-    }*/
-
     if (typeof titlesong === "string") {
         const nuevaCancion = new Song({ titlesong, musicArtist });
         await nuevaCancion.save();
