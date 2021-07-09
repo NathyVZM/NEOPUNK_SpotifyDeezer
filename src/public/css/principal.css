@@ -1,0 +1,254 @@
+/* principal.css */
+
+:root {
+    --gx-lime: #b1e667;
+    --gx-green: #6ebd00;
+    --gx-lavender: #c79fea;
+    --gx-purple: #551D86;
+    --gx-violet: #351254;
+    --gx-back-eggplant: #150721; 
+    --gx-back-black: #0e0714;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* HEADER */
+header {
+    background-color: var(--gx-back-eggplant);
+    overflow: auto;
+    padding: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+    border-bottom: 2px solid var(--gx-lime);
+}
+
+header > div {
+    padding: 0px 2%;
+}
+header > div:first-child {
+    flex: 3;
+}
+
+header > div:last-child {
+    flex: 1.1;
+    text-align: right;
+    border-left: 2px solid var(--gx-lime);
+}
+
+header > div:last-child a {
+    padding: 2.5% 5%;
+    font-size: 1.1em;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    margin: 2%;
+}
+
+header > div:last-child a:first-child {
+    background-color: var(--gx-green);
+    transition: background-color 0.2s ease-in-out 0s;
+}
+
+header > div:last-child a:first-child:hover {
+    background-color: var(--gx-lime);
+}
+
+header > div:last-child a:last-child {
+    background-color: var(--gx-violet);
+    border: 2px solid var(--gx-lime);
+    transition: background-color 0.2s ease-in-out 0s;
+}
+
+header > div:last-child a:last-child:hover {
+    background-color: var(--gx-purple);
+}
+
+#neopunk-icon {
+    width: 5.5%;
+    float: left;
+    margin-right: 2%;
+    margin-top: 0.5%;
+}
+
+#neopunk-title {
+    width: 20%;
+    float: left;
+    margin-top: 2%;
+}
+
+/* MAIN */
+main {
+    background: linear-gradient(45deg, var(--gx-green), var(--gx-lavender), var(--gx-purple));
+    background-size: 300% 300%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: column wrap;
+    height: 80%;
+    padding: 2%;
+    animation: degradado 15s ease infinite;
+}
+
+main > div {
+    text-align: center;
+    padding: 5% 25%;
+    color: var(--gx-back-eggplant);
+}
+
+main > div h1{
+    font-size: 7em;
+    font-family: montserrat_bold;
+}
+
+main > div p {
+    font-size: 1.7em;
+    font-weight: bold;
+    margin-bottom: 4%;
+}
+
+main > div a {
+    padding: 2% 4%;
+    font-size: 1.5em;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    margin: 1%;
+    background-color: var(--gx-violet);
+    border: 2px solid var(--gx-lime);
+    transition: background-color 0.2s ease-in-out 0s;
+}
+
+main > div a:hover {
+    background-color: var(--gx-purple);
+}
+
+@keyframes degradado {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: var(--gx-back-eggplant);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+    border-top: 2px solid var(--gx-lime);
+}
+
+footer > div:first-child {
+    flex: 1;
+    padding-left: 6%;
+    overflow: auto;
+    margin-top: -10%;
+}
+
+footer > div:first-child img:first-child {
+    float: left;
+    width: 15%;
+    margin-right: 5%;
+}
+
+footer > div:first-child img:last-child {
+    float: left;
+    width: 50%;
+    margin-top: 4%;
+}
+
+footer > div:nth-child(2) {
+    flex: 3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+    margin-top: 8%;
+    padding: 2%;
+}
+
+footer > div:last-child h2 {
+    color: var(--gx-lime);
+    font-size: 1.1em;
+    margin-bottom: 10%;
+}
+
+footer > div:last-child li {
+    color: var(--gx-lavender);
+    padding: 5%;
+    list-style-type: none;
+    transition: color 0.1s ease-in 0s;
+    cursor: pointer;
+}
+
+footer > div:last-child li:hover {
+    color: var(--gx-purple);
+}
+
+#neopunk {
+    align-self: baseline;
+}
+
+#comunidades {
+    align-self: baseline;
+}
+
+#legal {
+    align-self: baseline;
+}
+
+/* MISCELANEO */
+
+p, ul, li{
+    /*text-decoration: none;*/
+    font-family: cairo;
+}
+
+h1 {
+    font-family: montserrat_light;
+}
+
+h2, h3, a{
+    font-family: jura;
+    text-decoration: none;
+}
+
+/* FUENTES */
+@font-face {
+    font-family: "montserrat_light";
+    src: url("../assets/fonts/Montserrat/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: "montserrat_bold";
+    src: url("../assets/fonts/Montserrat/Montserrat-Medium.ttf");
+}
+
+@font-face {
+    font-family: "jura";
+    src: url("../assets/fonts/Jura/Jura-Regular.ttf");
+}
+
+@font-face {
+    font-family: "cairo";
+    src: url("../assets/fonts/Cairo/Cairo-Regular.ttf");
+}

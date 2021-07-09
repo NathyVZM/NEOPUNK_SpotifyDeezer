@@ -1,0 +1,213 @@
+/* registro_login.css */
+
+:root {
+    --gx-lime: #b1e667;
+    --gx-green: #6ebd00;
+    --gx-lavender: #c79fea;
+    --gx-purple: #551D86;
+    --gx-violet: #351254;
+    --gx-back-eggplant: #150721; 
+    --gx-back-black: #0e0714;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* HEADER */
+
+header {
+    background-color: var(--gx-back-eggplant);
+    padding: 2%;
+    border-bottom: 2px solid var(--gx-lime);
+}
+
+
+/* MAIN */
+
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+    height: 100%;
+    background: linear-gradient(45deg, var(--gx-green), var(--gx-purple));
+    background-size: 550% 550%;
+    animation: degradado 35s ease infinite;
+}
+
+@keyframes degradado {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+main > div:first-child {
+    padding: 5%;
+    flex: 1.1;
+}
+
+main > div:first-child p {
+    margin-top: 1%;
+    margin-left: 2%;
+    color: var(--gx-back-eggplant);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#neopunk-icon {
+    width: 10%;
+    margin-right: 2%;
+    align-self: center;
+}
+
+#neopunk-title {
+    width: 30%;
+    margin-bottom: 3%;
+
+}
+
+main > div:last-child {
+    flex: 1;
+    background-color: var(--gx-back-eggplant);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-flow: column wrap;
+    height: 97%;
+    border-radius: 15px;
+    margin-right: 2%;
+    border: 2px solid var(--gx-lime);
+}
+
+#registro-title {
+    flex: 0.5;
+    /*padding: 8% 10% 1% 10%;*/
+    width: 80%;
+    padding-bottom: 4%;
+    margin: 8% 10% 1% 10%;
+    border-bottom: 1px solid var(--gx-lime);
+}
+
+#registro-title h2 {
+    color: var(--gx-lime);
+    font-size: 2em;
+    margin-bottom: 2%;
+}
+
+#registro-title p {
+    color: white;
+}
+
+#registro-title a {
+    color: var(--gx-lavender);
+}
+
+#registro-form {
+    flex: 7;
+    padding: 3% 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-flow: column wrap;
+    width: 72%;
+    overflow: auto;
+}
+
+#registro-form input {
+    width: 100%;
+    padding: 1.5% 3.5%;
+    border-radius: 10px 10px 7px 7px;
+    outline: none;
+    margin: 2%;
+    border: none;
+    border-bottom: 2px solid var(--gx-lime);
+    background-color: var(--gx-violet);
+    color: white;
+    font-family: cairo;
+    font-size: 0.95em;;
+}
+
+#registro-form input::placeholder {
+    color: var(--gx-lavender);
+    font-family: cairo;
+}
+
+#registro-form button {
+    padding: 3% 5%;
+    font-size: 1.1em;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    margin: 2%;
+    background-color: var(--gx-green);
+    transition: background-color 0.2s ease-in-out 0s;
+    border: none;
+    outline: none;
+    align-self: flex-end;
+    cursor: pointer;
+    font-family: jura;
+}
+
+#registro-form button:hover {
+    background-color: var(--gx-lime);
+}
+
+
+/* FOOTER */
+footer {
+    background-color: var(--gx-back-eggplant);
+    border-top: 2px solid var(--gx-lime);
+    padding: 2%;
+}
+
+
+/* MISCELANEO */
+
+a, p, ul, li{
+    text-decoration: none;
+    font-family: cairo;
+}
+
+h1 {
+    font-family: montserrat_light;
+}
+
+h2, h3 {
+    font-family: jura;
+}
+
+/* FUENTES */
+
+@font-face {
+    font-family: "montserrat_light";
+    src: url("../assets/fonts/Montserrat/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: "montserrat_bold";
+    src: url("../assets/fonts/Montserrat/Montserrat-Medium.ttf");
+}
+
+@font-face {
+    font-family: "jura";
+    src: url("../assets/fonts/Jura/Jura-Regular.ttf");
+}
+
+@font-face {
+    font-family: "cairo";
+    src: url("../assets/fonts/Cairo/Cairo-Regular.ttf");
+}
