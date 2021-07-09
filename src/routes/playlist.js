@@ -28,7 +28,7 @@ router.post('/playlist/crear', isAuthenticated, async (req, res) => {
 // VER MIS PLAYLISTS - GET
 router.get('/playlist', isAuthenticated, async (req, res) => {
     const playlists = await Playlist.find({ user: req.user.id });
-    res.render('playlist/misPlaylists', { playlists });
+    res.render('playlist/misPlaylists', { title: "NEOPUNK - Mis playlists", playlists, username: req.user.username });
 })
 
 

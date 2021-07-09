@@ -1,15 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
+    <link rel="icon" href="/assets/icons/NEOPUNK_Icon1.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/css/inicial.css">
 </head>
+
 <body>
-    {{{body}}}
+    <header>
+        <h2> {{ username }} </h2>
+        <img src="/assets/icons/userIcon.svg" alt="user icon">
+    </header>
+
+    <nav>
+        <div id="logo">
+            <img src="/assets/icons/NEOPUNK_Icon1.svg" alt="NEOPUNK icon" id="neopunk-icon">
+            <img src="/assets/icons/NEOPUNK_title1.svg" alt="NEOPUNK title" id="neopunk-title">
+        </div>
+        <div id="menu-usuario">
+            <ul>
+                <li>
+                    <img src="/assets/icons/musicIcon.svg" alt="">
+                    <a href="/">Musica</a>
+                </li>
+                <li>
+                    <img src="/assets/icons/searchIcon.svg" alt="">
+                    <a href="/buscar">Buscar</a>
+                </li>
+                <li>
+                    <img src="/assets/icons/userIcon.svg" alt="">
+                    <a href="/playlist/crear">Crear playlist</a>
+                </li>
+                <li>
+                    <img src="/assets/icons/userIcon.svg" alt="">
+                    <a href="/favoritas">Canciones Favoritas</a>
+                </li>
+            </ul>
+        </div>
+        <div id="menu-artista">
+            <ul>
+                <li>
+                    <img src="/assets/icons/userIcon.svg" alt="">
+                    <a href="/artista/crear">Nuevo Artista</a>
+                </li>
+                <li>
+                    <img src="/assets/icons/userIcon.svg" alt="">
+                    <a href="/artista/musica">Nueva Musica</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div>
+            <img src="/assets/icons/userIcon.svg" alt="" width="20">
+            <h1>Mis Playlists</h1>
+            <p>Escucha las playlists que hayas creado</p>
+        </div>
+        <div>
+            {{{body}}}
+        </div>
+    </main>
 
     <script src="/prueba.js"></script>
     <script src="/enviarCancion.js"></script>
 </body>
+
 </html>
