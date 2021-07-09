@@ -28,7 +28,13 @@ router.post('/playlist/crear', isAuthenticated, async (req, res) => {
 // VER MIS PLAYLISTS - GET
 router.get('/playlist', isAuthenticated, async (req, res) => {
     const playlists = await Playlist.find({ user: req.user.id });
-    res.render('playlist/misPlaylists', { title: "NEOPUNK - Mis playlists", playlists, username: req.user.username });
+    res.render('playlist/misPlaylists', {
+        title: "NEOPUNK - Mis playlists", 
+        playlists, username: req.user.username, 
+        titlepage: 'Musica',
+        textpage: 'Escucha las playlists que has creado',
+        imgpage: '/assets/icons/musicIconEggplant.svg'
+    });
 })
 
 
@@ -40,26 +46,26 @@ router.get('/playlist/cancion', isAuthenticated, async (req, res) => {
 
 
 // ANIADIR CANCION A PLAYLIST - POST
-router.post('/playlist/cancion', isAuthenticated, async(req, res) => {
+router.post('/playlist/cancion', isAuthenticated, async (req, res) => {
     console.log(req.body);
     const cancionID = req.body.cancionID;
     const playlistID = req.body.playlistID;
 
-    await Playlist.findOneAndUpdate({_id: playlistID}, {$push: {canciones: cancionID}})
+    await Playlist.findOneAndUpdate({ _id: playlistID }, { $push: { canciones: cancionID } })
 })
 
 // VER CANCIONES DE PLAYLIST - GET
 router.get('/playlist/:id', isAuthenticated, async (req, res) => {
     const playlistCanciones = await Playlist.find({ user: req.user.id, _id: req.params.id })
-    .populate({
-        path: 'canciones',
-        populate: {
-            path: 'musicArtist',
+        .populate({
+            path: 'canciones',
             populate: {
-                path: 'artist'
+                path: 'musicArtist',
+                populate: {
+                    path: 'artist'
+                }
             }
-        }
-    });
+        });
 
     console.log(playlistCanciones);
     res.render('playlist/verPlaylist', { playlistCanciones });

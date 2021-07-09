@@ -1,0 +1,27 @@
+{{#if canciones}}
+<table class="box-result">
+    <tr>
+        <th>#</th>
+        <th>Cancion</th>
+        <th></th>
+        <th>Album</th>
+        <th>Artista</th>
+    </tr>
+    {{#each canciones}}
+    <tr>
+        <td class="normaltext">{{@key}}</td>
+        <td class="titlesong">{{ titlesong }}</td>
+        <td>
+            <!--<form action="/favoritas/{{_id}}" method="POST">
+                <input type="image" name="{{_id}}" src="/assets/icons/loveIcon.svg" width="20">
+            </form>-->
+            <input type="image" name="{{_id}}" src="/assets/icons/loveIcon.svg" width="20">
+        </td>
+        <!--<td><button type="button" name="{{_id}}">Favoritas</button></td>-->
+        <td class="normaltext">{{ musicArtist.title }}</td>
+        <td class="normaltext">{{ musicArtist.artist.name }}</td>
+    </tr>
+    {{/each}}
+</table>
+<div id="buscarCanciones"></div>
+{{/if}}

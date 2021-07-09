@@ -25,18 +25,18 @@
             <ul>
                 <li>
                     <img src="/assets/icons/musicIcon.svg" alt="">
-                    <a href="/">Musica</a>
+                    <a href="/playlist">Musica</a>
                 </li>
                 <li>
                     <img src="/assets/icons/searchIcon.svg" alt="">
                     <a href="/buscar">Buscar</a>
                 </li>
                 <li>
-                    <img src="/assets/icons/userIcon.svg" alt="">
+                    <img src="/assets/icons/addIcon.svg" alt="">
                     <a href="/playlist/crear">Crear playlist</a>
                 </li>
                 <li>
-                    <img src="/assets/icons/userIcon.svg" alt="">
+                    <img src="/assets/icons/loveIcon.svg" alt="">
                     <a href="/favoritas">Canciones Favoritas</a>
                 </li>
             </ul>
@@ -44,11 +44,11 @@
         <div id="menu-artista">
             <ul>
                 <li>
-                    <img src="/assets/icons/userIcon.svg" alt="">
+                    <img src="/assets/icons/artistIcon.svg" alt="">
                     <a href="/artista/crear">Nuevo Artista</a>
                 </li>
                 <li>
-                    <img src="/assets/icons/userIcon.svg" alt="">
+                    <img src="/assets/icons/albumIcon.svg" alt="">
                     <a href="/artista/musica">Nueva Musica</a>
                 </li>
             </ul>
@@ -57,9 +57,9 @@
 
     <main>
         <div>
-            <img src="/assets/icons/userIcon.svg" alt="" width="20">
-            <h1>Mis Playlists</h1>
-            <p>Escucha las playlists que hayas creado</p>
+            <img src="{{imgpage}}" alt="">
+            <h1>{{ titlepage }}</h1>
+            <p>{{ textpage }}</p>
         </div>
         <div>
             {{{body}}}

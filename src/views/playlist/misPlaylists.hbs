@@ -1,5 +1,10 @@
 {{#each playlists}}
-<div>
+<!--<div class="box">
     <h3><a href="/playlist/{{ _id }}"> {{ title }}</a></h3>
-</div>
+    <p>{{ description }}</p>
+</div>-->
+<a href="/playlist{{ _id }}" class="box">
+    <h3>{{ title }}</h3>
+    <p>{{ description }}</p>
+</a>
 {{/each}}

@@ -1,8 +1,11 @@
-<div>
-    <h1>Canciones</h1>
-    <form action="/buscar/canciones" method="POST">
-        <input type="text" name="title" placeholder="Titulo de la Cancion">
+<div class="search">
+    <div class="box-search">
+        <h3 class="box-search-title">Canciones</h3>
+        <form action="/buscar/canciones" method="POST" class="form-search">
+            <input type="text" name="title" placeholder="Titulo de la cancion">
 
-        <button type="submit">Buscar</button>
-    </form>
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+    {{> buscarCancion}}
 </div>

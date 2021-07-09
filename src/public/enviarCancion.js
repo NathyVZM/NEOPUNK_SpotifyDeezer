@@ -48,7 +48,7 @@ if(buscarCanciones) {
     }
 
 
-    let button = document.getElementsByTagName('button');
+    let button = document.getElementsByTagName('input');
 
     for(let i = 0; i < button.length; i++){
         button[i].onclick = (e) => {
@@ -64,7 +64,8 @@ if(buscarCanciones) {
             }).then(response => {
                 return response.json();
             }).then(respuesta => {
-                console.log(respuesta)
+                console.log(respuesta);
+                window.alert('Cancion Aniadida a Canciones Favoritas');
             })
         }
     }

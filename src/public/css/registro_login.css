@@ -37,8 +37,9 @@ main {
     align-items: center;
     flex-flow: row wrap;
     height: 100%;
-    background: linear-gradient(45deg, var(--gx-green), var(--gx-purple));
-    background-size: 550% 550%;
+    background: linear-gradient(45deg, var(--gx-green), var(--gx-lavender), var(--gx-purple), var(--gx-lime),
+    var(--gx-green), var(--gx-lavender), var(--gx-purple), var(--gx-lime));
+    background-size: 1000% 1000%;
     animation: degradado 35s ease infinite;
 }
 
