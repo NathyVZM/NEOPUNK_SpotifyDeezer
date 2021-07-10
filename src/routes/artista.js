@@ -10,7 +10,13 @@ const { isAuthenticated } = require('../helpers/auth');
 
 // CREAR ARTISTA - GET
 router.get('/artista/crear', isAuthenticated, (req, res) => {
-    res.render('artista/crearArtista', { title: 'NEOPUNK - Crear Artista' });
+    res.render('artista/crearArtista', {
+        title: 'NEOPUNK - Crear Artista',
+        titlepage: 'Crear Artista',
+        textpage: 'Crea el perfil de tus artistas preferidos',
+        imgpage: '/assets/icons/artistIconEggplant.svg',
+        username: req.user.username
+    });
 });
 
 
@@ -27,7 +33,14 @@ router.post('/artista/crear', isAuthenticated, async (req, res) => {
 // CREAR MUSICA - GET
 router.get('/artista/musica', isAuthenticated, async (req, res) => {
     const artistas = await Artist.find();
-    res.render('artista/crearMusica', { title: 'NEOPUNK - Crear Musica', artistas });
+    res.render('artista/crearMusica', {
+        title: 'NEOPUNK - Crear Musica',
+        artistas,
+        titlepage: 'Crear musica',
+        textpage: 'Aniade a la app tu musica favorita',
+        imgpage: '/assets/icons/albumIconEggplant.svg',
+        username: req.user.username
+    });
 });
 
 

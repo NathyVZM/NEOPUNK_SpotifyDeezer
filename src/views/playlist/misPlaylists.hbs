@@ -1,10 +1,15 @@
+{{#if playlists}}
+<div class="create">
+    <h1>{{length}} playlists</h1>
+</div>
+
+<div class="box-playlist">
 {{#each playlists}}
-<!--<div class="box">
-    <h3><a href="/playlist/{{ _id }}"> {{ title }}</a></h3>
-    <p>{{ description }}</p>
-</div>-->
-<a href="/playlist{{ _id }}" class="box">
+<a href="/playlist/{{ _id }}" class="box">
     <h3>{{ title }}</h3>
     <p>{{ description }}</p>
 </a>
 {{/each}}
+</div>
+
+{{/if}}

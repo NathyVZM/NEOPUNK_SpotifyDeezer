@@ -28,7 +28,7 @@ if (guardar && form_artista) {
 let crearCancion = document.getElementById('crearCancion');
 let espacioCanciones = document.getElementById('espacioCanciones');
 
-if(crearCancion && espacioCanciones) {
+if (crearCancion && espacioCanciones) {
     const agregarCancion = () => {
         let input = document.createElement('input');
         input.type = 'text';
@@ -39,4 +39,20 @@ if(crearCancion && espacioCanciones) {
     }
 
     crearCancion.onclick = agregarCancion;
+}
+
+let logout = document.getElementById('logout');
+
+if (logout) {
+    const cerrarSesion = () => {
+        console.log('Cerrar sesion');
+        fetch('/logout', { method: 'GET' })
+        .then (respuesta => {
+            return respuesta.json()
+        }).then(response => {
+            console.log(response);
+        })
+    }
+
+    logout.onclick = cerrarSesion;
 }

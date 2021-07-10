@@ -1,4 +1,7 @@
+{{#if favoritas}}
+
 <div class="search">
+    <h1>{{length}} canciones</h1>
     {{#each favoritas}}
     <table class="box-result">
         <tr>
@@ -18,3 +21,4 @@
     </table>
     {{/each}}
 </div>
+{{/if}}

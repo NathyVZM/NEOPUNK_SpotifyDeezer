@@ -26,7 +26,8 @@ router.get('/favoritas', isAuthenticated, async (req, res) => {
         titlepage: 'Canciones Favoritas',
         textpage: 'Escucha tu playlist de canciones favoritas',
         imgpage: '/assets/icons/loveIconEggplant.svg',
-        username: req.user.username
+        username: req.user.username,
+        length: favoritas[0].cancionesFavoritas.length
     });
 
 });

@@ -88,8 +88,9 @@ header > div:last-child a:last-child:hover {
 
 /* MAIN */
 main {
-    background: linear-gradient(45deg, var(--gx-green), var(--gx-lavender), var(--gx-purple));
-    background-size: 300% 300%;
+    background: linear-gradient(45deg, var(--gx-green), var(--gx-lavender), var(--gx-purple), var(--gx-lime),
+    var(--gx-green), var(--gx-lavender), var(--gx-purple), var(--gx-lime));
+    background-size: 500% 500%;
     display: flex;
     justify-content: space-around;
     align-items: center;

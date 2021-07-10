@@ -1,11 +1,24 @@
-<div>
+{{#if playlistCanciones}}
+<div class="search">
+    <h1>{{length}} Canciones</h1>
+    
     {{#each playlistCanciones}}
-    <div>
+    <table class="box-result">
+        <tr>
+            <th>#</th>
+            <th>Cancion</th>
+            <th>Album</th>
+            <th>Artista</th>
+        </tr>
         {{#each canciones}}
-        <h3>{{ titlesong }}</h3>
-        <p>{{ musicArtist.title }}</p>
-        <p>{{ musicArtist.artist.name }}</p>
+        <tr>
+            <td class="normaltext">{{@key}}</td>
+            <td class="titlesong">{{ titlesong }}</td>
+            <td class="normaltext">{{ musicArtist.title }}</td>
+            <td class="normaltext">{{ musicArtist.artist.name }}</td>
+        </tr>
         {{/each}}
-    </div>
+    </table>
     {{/each}}
 </div>
+{{/if}}

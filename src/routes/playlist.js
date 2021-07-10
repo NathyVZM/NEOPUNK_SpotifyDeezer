@@ -9,7 +9,13 @@ const { isAuthenticated } = require('../helpers/auth');
 
 // CREAR PLAYLIST - GET
 router.get('/playlist/crear', isAuthenticated, (req, res) => {
-    res.render('playlist/crearPlaylist', { title: 'NEOPUNK - Crear playlist' });
+    res.render('playlist/crearPlaylist', { 
+        title: 'NEOPUNK - Crear playlist',
+        titlepage: 'Crear Playlist',
+        textpage: 'Crea tus playlists preferidas',
+        imgpage: '/assets/icons/playlistIconEggplant.svg',
+        username: req.user.username
+    });
 });
 
 
@@ -29,11 +35,12 @@ router.post('/playlist/crear', isAuthenticated, async (req, res) => {
 router.get('/playlist', isAuthenticated, async (req, res) => {
     const playlists = await Playlist.find({ user: req.user.id });
     res.render('playlist/misPlaylists', {
-        title: "NEOPUNK - Mis playlists", 
-        playlists, username: req.user.username, 
+        title: "NEOPUNK - Mis playlists",
+        playlists, username: req.user.username,
         titlepage: 'Musica',
         textpage: 'Escucha las playlists que has creado',
-        imgpage: '/assets/icons/musicIconEggplant.svg'
+        imgpage: '/assets/icons/musicIconEggplant.svg',
+        length: playlists.length
     });
 })
 
@@ -68,7 +75,17 @@ router.get('/playlist/:id', isAuthenticated, async (req, res) => {
         });
 
     console.log(playlistCanciones);
-    res.render('playlist/verPlaylist', { playlistCanciones });
+    console.log(playlistCanciones[0].canciones.length);
+
+    res.render('playlist/verPlaylist', {
+        playlistCanciones,
+        title: 'NEOPUNK - Mis playlist',
+        titlepage: playlistCanciones[0].title,
+        textpage: playlistCanciones[0].description,
+        imgpage: '/assets/icons/playlistIconEggplant.svg',
+        username: req.user.username,
+        length: playlistCanciones[0].canciones.length
+    });
 });
 
 

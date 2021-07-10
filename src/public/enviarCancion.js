@@ -1,10 +1,32 @@
 let buscarCanciones = document.getElementById('buscarCanciones');
 
+let buttonclose = document.getElementById('close');
+
+if(buttonclose && buscarCanciones) {
+    const cerrar = () => {
+        buscarCanciones.style.display = "none";
+    }
+
+    buttonclose.onclick = cerrar;
+}
+
 if(buscarCanciones) {
-    let h3 = document.getElementsByTagName('h3');
+
+    let h3 = document.getElementsByTagName('td');
 
     for(let i = 0; i < h3.length; i++){
         h3[i].onclick = (e) => {
+
+            let p = document.getElementsByTagName('p');
+
+            if(p) {
+                while(p.length){
+                    p[0].parentNode.removeChild(p[0]);
+                }
+            }
+
+            buscarCanciones.style.display = 'flex';
+
             let cancionID = e.target.id;
             console.log(e.target.id);
 
@@ -16,7 +38,7 @@ if(buscarCanciones) {
                 console.table(playlists);
 
                 for(let j = 0; j < playlists.length; j++) {
-                    let h2 = document.createElement('h2');
+                    let h2 = document.createElement('p');
                     h2.innerText = playlists[j].title;
                     h2.id = playlists[j]._id;
 
@@ -40,6 +62,7 @@ if(buscarCanciones) {
                         }).then(response => {
                             console.log(response);
                         })
+                        alert('Cancion Aniadida');
                     }
                 }
                 

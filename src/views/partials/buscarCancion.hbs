@@ -10,18 +10,17 @@
     {{#each canciones}}
     <tr>
         <td class="normaltext">{{@key}}</td>
-        <td class="titlesong">{{ titlesong }}</td>
-        <td>
-            <!--<form action="/favoritas/{{_id}}" method="POST">
-                <input type="image" name="{{_id}}" src="/assets/icons/loveIcon.svg" width="20">
-            </form>-->
+        <td class="titlesong" id="{{_id}}">{{ titlesong }}</td>
+        <th>
             <input type="image" name="{{_id}}" src="/assets/icons/loveIcon.svg" width="20">
-        </td>
+        </th>
         <!--<td><button type="button" name="{{_id}}">Favoritas</button></td>-->
         <td class="normaltext">{{ musicArtist.title }}</td>
         <td class="normaltext">{{ musicArtist.artist.name }}</td>
     </tr>
     {{/each}}
 </table>
-<div id="buscarCanciones"></div>
+<div id="buscarCanciones">
+    <img src="/assets/icons/close.svg" alt="" id="close">
+</div>
 {{/if}}

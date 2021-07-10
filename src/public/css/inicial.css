@@ -43,10 +43,15 @@ header {
     z-index: 5;
 }
 
+header a {
+    width: 4%;
+}
+
 header img {
     float: right;
-    width: 3.5%;
+    width: 80%;
     margin-left: 1%;
+    cursor: pointer;
 }
 
 header h2 {
@@ -141,7 +146,7 @@ main {
     position: absolute;
     left: 15%;
     width: 75.9%;
-    top: 12.5%;
+    top: 12%;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -181,7 +186,7 @@ main > div:first-child img {
 
 main > div:first-child h1{
     margin-top: 5%;
-    font-size: 4.5em;
+    font-size: 4em;
     font-family: montserrat_bold;
 }
 
@@ -191,16 +196,40 @@ main > div:first-child p {
 }
 
 main > div:last-child {
-    flex: 4 1;
+    flex: 4;
     background-color: var(--gx-back-eggplant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    width: 100%;
+    border-top: 2px solid var(--gx-lime);
+    /*height: 1100px;*/
+    padding-left: 12%;
+    position: relative;
+}
+
+main > div:last-child > div:first-child {
+    flex: 1;
+    color: white;
+    align-self: flex-start;
+    margin-top: 4%;
+}
+
+.create {
+    border-bottom: 1px solid var(--gx-purple);
+    padding-bottom: 2%;
+    width: 90%;
+}
+
+
+.box-playlist {
+    flex: 2;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-flow: row wrap;
     width: 100%;
-    border-top: 2px solid var(--gx-lime);
-    /*height: 1100px;*/
-    padding-left: 12%;
 }
 
 .box {
@@ -240,7 +269,13 @@ main > div:last-child {
     justify-content: space-around;
     align-items: center;
     flex-flow: column wrap;
-    padding: 5%;
+    padding: 2% 5% 5% 5%;
+    width: 90%;
+}
+
+.search h1 {
+    align-self: flex-start;
+    color: white;
 }
 
 .box-search {
@@ -323,7 +358,7 @@ main > div:last-child {
     border-bottom: 1px solid var(--gx-purple);
 }
 
-.box-result td input {
+.box-result th input {
     margin-left: 25%;
     transition: background-color 0.1s ease-in-out 0s;
     border-radius: 5px;
@@ -331,7 +366,7 @@ main > div:last-child {
     cursor: pointer;
 }
 
-.box-result td input:hover {
+.box-result th input:hover {
     background-color: var(--gx-purple);
 }
 
@@ -341,7 +376,163 @@ main > div:last-child {
 
 .titlesong {
     color: var(--gx-lime);
+    cursor: pointer;
 }
+
+#buscarCanciones {
+    display: none;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-flow: column wrap;
+    position: absolute;
+    background-color: var(--gx-back-eggplant);
+    color: white;
+    padding: 2%;
+    border-radius: 10px;
+    border: 2px solid var(--gx-lime);
+    width: 20%;
+    left: 30%;
+}
+
+#buscarCanciones p {
+    font-size: 1.1em;
+    padding: 5%;
+    margin: 3%;
+    border-bottom: 1px solid var(--gx-violet);
+    width: 85%;
+    cursor: pointer;
+}
+
+#close {
+    width: 8%;
+    position: absolute;
+    top: 5%;
+    right: 8%;
+    cursor: pointer;
+}
+
+.form-playlist {
+    align-self: flex-start;
+    flex: 2;
+    width: 95%;
+    overflow: auto;
+    margin-top: 5%;
+}
+
+.form-playlist img {
+    float: left;
+    width: 30%;
+}
+
+.form-playlist input, .form-playlist textarea, .form-playlist button {
+    flex: 1;
+    margin: 1%;
+}
+
+.form-playlist input {
+    padding: 2%;
+    border-radius: 15px;
+    background-color: var(--gx-violet);
+    color: white;
+    font-family: cairo;
+    border: none;
+    border-bottom: 2px solid var(--gx-lime);
+    outline: none;
+    width: 63%;
+    font-size: 1em;
+    transition: background-color 0.1s ease-in-out 0s;
+}
+
+.form-playlist input::placeholder {
+    font-family: cairo;
+    color: var(--gx-lavender);
+}
+
+.form-playlist input:hover {
+    background-color: var(--gx-purple);
+}
+
+.form-playlist textarea {
+    width: 63%;
+    height: 120px;
+    padding: 2%;
+    border-radius: 15px;
+    background-color: var(--gx-violet);
+    color: white;
+    font-family: cairo;
+    font-size: 1em;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--gx-lime);
+    border-right: 2px solid var(--gx-lime);
+    transition: background-color 0.1s ease-in-out 0s;
+}
+
+.form-playlist textarea::placeholder {
+    font-family: cairo;
+    color: var(--gx-lavender);
+}
+
+.form-playlist textarea:hover {
+    background-color: var(--gx-purple);
+}
+
+.form-playlist button {
+    float: right;
+    padding: 1.5% 3%; 
+    background-color: var(--gx-green);
+    border: none;
+    outline: none;
+    font-family: jura;
+    border-radius: 10px;
+    font-size: 1.3em;
+    color: white;
+    font-weight: bold;
+    margin-top: 7%;
+    transition: background-color 0.1s ease-in-out 0s;
+    cursor: pointer;
+}
+
+.form-playlist button:hover {
+    background-color: var(--gx-lime);
+}
+
+.form-playlist select {
+    background-color: var(--gx-violet);
+    color: white;
+    font-family: cairo;
+    font-size: 1em;
+    border-radius: 10px;
+    padding: 1%;
+    margin: 2%;
+    border: none;
+    border: 1px solid var(--gx-lime);
+    outline: none;
+}
+
+#crearCancion {
+    float: right;
+    background-color: var(--gx-violet);
+    border: 2px solid var(--gx-lime);
+    transition: background-color 0.1s ease-in-out 0s;
+    padding: 1.5%;
+    font-size: 1.1em;
+    /*margin-top: 20%;*/
+    margin-top: 2.1%;
+}
+
+#espacioCanciones {
+    margin-top: 5%;
+}
+
+#espacioCanciones input {
+    width: 92%;
+}
+
+#crearCancion:hover {
+    background-color: var(--gx-purple);
+}
+
 
 /* MISCELANEO */
 
