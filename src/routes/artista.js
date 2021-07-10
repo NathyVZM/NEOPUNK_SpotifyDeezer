@@ -64,7 +64,7 @@ router.post('/artista/musica', isAuthenticated, async (req, res) => {
             await nuevaCancion.save();
         }
     }
-    res.redirect('/artista/crear');
+    res.redirect('/playlist');
 })
 
 module.exports = router;
